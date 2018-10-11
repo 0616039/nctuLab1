@@ -19,21 +19,33 @@ function addns {
     echo "[INFO] Create h1 and h2 network namespaces"
     ip netns add h1
     # Create h2 network namespaces (Task 1.)
+<<<<<<< HEAD
     ip netns add h2
+=======
+
+>>>>>>> 0102c067b44a2f7ea2085ada7a98e68292dc765e
 }
 
 function delns {
     echo "[INFO] Delete h1 and h2 network namespaces"
     ip netns del h1
     # Delete h2 network namespaces (Task 1.)
+<<<<<<< HEAD
     ip netns del h2
+=======
+
+>>>>>>> 0102c067b44a2f7ea2085ada7a98e68292dc765e
 }
 
 function lookup {
     echo "[INFO] Bring up the lookup interface in h1 and h2"
     ip netns exec h1 ip link set lo up
     # Bring up the lookup interface in h2 (Task 1.)
+<<<<<<< HEAD
     ip netns exec h2 ip link set lo up
+=======
+    
+>>>>>>> 0102c067b44a2f7ea2085ada7a98e68292dc765e
 }
 
 function addlink {
@@ -41,14 +53,22 @@ function addlink {
     ip link add h1-eth0 type veth peer name h2-eth0
     ip link set h1-eth0 netns h1
     # Set the interface of h2 to h2-eth0 (Task 1.)
+<<<<<<< HEAD
     ip link set h2-eth0 netns h2
+=======
+    
+>>>>>>> 0102c067b44a2f7ea2085ada7a98e68292dc765e
 }
 
 function dellink {
     echo "[INFO] Delete the link: h1-eth0 <-> h2-eth0"
     ip link delete h1-eth0 
     # Delete the interface of h2-eth0 (Task 1.)
+<<<<<<< HEAD
     ip link delete h2-eth0
+=======
+    
+>>>>>>> 0102c067b44a2f7ea2085ada7a98e68292dc765e
 }
 
 function activate {
@@ -59,23 +79,35 @@ function activate {
 
     echo "[INFO] Activate h2-eth0 and assign IP address"
     # Activate h2-eth0 and assign IP address (Task 1.)
+<<<<<<< HEAD
     ip netns exec h2 ip link set dev h2-eth0 up
     ip netns exec h2 ip link set h2-eth0 address 00:0a:00:00:02:02
     ip netns exec h2 ip addr add 10.0.1.2/24 dev h2-eth0
+=======
+
+>>>>>>> 0102c067b44a2f7ea2085ada7a98e68292dc765e
 }
 
 function disableIPv6 {
     echo "[INFO] Disable all IPv6 on h1-eth0 and h2-eth0"
     ip netns exec h1 sysctl net.ipv6.conf.h1-eth0.disable_ipv6=1
     # Disable all IPv6 on h2-eth0 (Task 1.)
+<<<<<<< HEAD
     ip netns exec h2 sysctl net.ipv6.conf.h2-eth0.disable_ipv6=1
+=======
+    
+>>>>>>> 0102c067b44a2f7ea2085ada7a98e68292dc765e
 }
 
 function route {
     echo "[INFO] Set the gateway to 10.0.1.254 in routing table"
     ip netns exec h1 ip route add default via 10.0.1.254
     # Set the gateway of h2 to 10.0.1.254 (Task 1.)
+<<<<<<< HEAD
     ip netns exec h2 ip route add default via 10.0.1.254
+=======
+    
+>>>>>>> 0102c067b44a2f7ea2085ada7a98e68292dc765e
 }
 
 function run {
@@ -138,4 +170,8 @@ elif [ "$1" == "download" ]; then
     exit
 fi
 
+<<<<<<< HEAD
 $1
+=======
+$1
+>>>>>>> 0102c067b44a2f7ea2085ada7a98e68292dc765e
