@@ -1,7 +1,9 @@
 # Download base image from yungshenglu/ubuntu-env:16.04 (Task 1.)
 FROM yungshenglu/ubuntu-env:16.04
+
 # Update software repository (Task 1.)
 RUN apt-get update
+
 # Install software repository (Task 1.)
 RUN apt-get install -y tcpdump
 
