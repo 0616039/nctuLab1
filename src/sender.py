@@ -9,11 +9,9 @@ from Protocol import Protocol
 # Set source and destination IP address (Task 3.)
 src_ip = '10.0.1.1'
 dst_ip = '10.0.1.2'
-
 # Set source and destination port (Task 3.)
 src_port = 1024
 dst_port = 80
-
 
 '''
 Main function
@@ -22,12 +20,11 @@ def main():
     # Define IP header (Task 3.)
     ip = IP(src = src_ip, dst = dst_ip)
 
-    # Define customized header (Task 3)
+    # Define customized header (Task 3.)
     my_id = '0616039'
     my_dept = 'cs'
     my_gender = 1
     student = Protocol(id = my_id, dept = my_dept, gender = my_gender)
-
     # Read file and store into list
     count = 0
     secret = []

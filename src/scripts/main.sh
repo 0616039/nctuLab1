@@ -62,6 +62,7 @@ function activate {
     ip netns exec h2 ip link set dev h2-eth0 up
     ip netns exec h2 ip link set h2-eth0 address 00:0a:00:00:02:02
     ip netns exec h2 ip addr add 10.0.1.2/24 dev h2-eth0
+
 }
 
 function disableIPv6 {
@@ -137,5 +138,5 @@ elif [ "$1" == "download" ]; then
     $1 $2 $3
     exit
 fi
-
 $1
+
