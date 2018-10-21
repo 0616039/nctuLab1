@@ -23,9 +23,9 @@ def main():
     ip = IP(src = src_ip, dst = dst_ip)
 
     # Define customized header (Task 3)
-    my_id = '0616227'
-    my_dept = 'ME'
-    my_gender = 'female'
+    my_id = '0616039'
+    my_dept = 'cs'
+    my_gender = 1
     student = Protocol(id = my_id, dept = my_dept, gender = my_gender)
 
     # Read file and store into list
